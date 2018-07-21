@@ -1,13 +1,14 @@
 const express = require('express'),
-patch =  require('path');
+const path =  require('path');
 
 const app =  express();
-app.use(express.static('.dist/parabens'));
+app.use(express.static('./dist/parabens'));
 
-app.get('/*',(req,res)=>{
-    res.sendFile(Path.join(__dirname,'/dist/parabens/index.html'));
-});
+app.get('/*', function(req,res) {
+    
+    res.sendFile(path.join(__dirname,'/dist/your_app_name/index.html'));
+    });
 
-app.listen(process.env.PORT || 8000,()=>{
+app.listen(process.env.PORT || 8080,()=>{
     console.log('Server started');
 })
